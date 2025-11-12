@@ -48,13 +48,12 @@ function init(){
   const perthBaseMapBounds3 = [[45.58, 87.73], [50.03, 92.22]]
   const imagePerthOverlay3 = L.imageOverlay(perthBaseMapImage3, perthBaseMapBounds3)
 
-
   // Overlay object
   const overlayerLayers = {
     'Khuvsgul Aimag image': imagePerthOverlay,
     'Dornod Aimag image': imagePerthOverlay2,
-    'BayanUlgii Aimag image': imagePerthOverlay3
-    
+    'BayanUlgii Aimag image': imagePerthOverlay3,
+    'Odoogiin bairlal': mymap.locate({setView:true, maxZoom: 6})
   } 
 
   
@@ -106,12 +105,12 @@ function init(){
 
   // Distance calculation demo
   // New code
-  /*var myCustomIcon = L.icon({
+  var myCustomIcon = L.icon({
     iconUrl: '../Data/icon_point.png',
     iconSize: [30, 30],
     iconAnchor: [15, 30],
     popupAnchor: [0, -15],
-  })*/
+  })
 
   
   var myDivIcon = L.divIcon({
