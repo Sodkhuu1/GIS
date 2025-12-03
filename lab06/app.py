@@ -49,19 +49,25 @@ def index():
 
 @app.route("/layout")
 def view_layout():
-    handler = OSMHandler()
-    handler.apply_file("osm/map.osm") # /osm фолдер дотроос уншина
-    coords = handler.nodes[:100]  # эхний 100 цэгийг л харуулъя
+    # Lines ба polygons цуглуулах
+    way_handler = WayCollector()
+    way_handler.apply_file("osm/map.osm", locations=True)
+    roads = way_handler.roads
+    buildings = way_handler.buildings
 
-    if coords:
-        # Бүх цэгүүдийн дундажийг тооцоолно
-        lats = [c[0] for c in coords]
-        lons = [c[1] for c in coords]
-        center = (statistics.mean(lats), statistics.mean(lons))  # дундаж цэг
+    # Bounds тооцоолол (бүх өгөгдлөөс)
+    all_coords = [pt for way in roads + buildings for pt in way if pt]
+    if all_coords:
+        lats = [lat for lat, lon in all_coords]
+        lons = [lon for lat, lon in all_coords]
+        bounds = [[min(lats), min(lons)], [max(lats), max(lons)]]
     else:
-        center = (47.92, 106.92) # Улаанбаатарыг төв болгох
+        bounds = [[47.91, 106.89], [47.93, 106.94]]
 
-    return render_template("layout.html", coords=coords, center=center)
+    return render_template("layout.html",
+                           roads=roads,
+                           buildings=buildings,
+                           bounds=bounds)
 
 @app.route("/layer")
 def view_layer():
@@ -85,6 +91,17 @@ def view_layer():
                         roads=roads[:100],
                         buildings=buildings[:100],
                         bounds=bounds)
+@app.route("/json", methods=['GET'])
+def read_json()
 
+@app.route("/json", methods=['POST'])
+def create_json()
+
+@app.route("/json", methods=['PUT'])
+def edit_json()
+
+@app.route("/json", methods=['DELETE'])
+def delete_json()
+    
 if __name__ == "__main__":
     app.run(host="0.0.0.0", port=5000)
