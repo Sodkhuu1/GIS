@@ -34,7 +34,7 @@ function init(){
     layers: [OpenStreetMapStandard]
   })
 
-
+  const ubCenter = L.latLng(47.92123, 106.91856);
   // Overlays
   const perthBaseMapImage = './Data/khuvsgul_aimag.png';
   const perthBaseMapBounds = [[48.0, 100.0], [52.0, 108.0]];
@@ -48,12 +48,13 @@ function init(){
   const perthBaseMapBounds3 = [[45.58, 87.73], [50.03, 92.22]]
   const imagePerthOverlay3 = L.imageOverlay(perthBaseMapImage3, perthBaseMapBounds3)
 
+  const currentLocationLayer = L.layerGroup().addTo(mymap);
   // Overlay object
   const overlayerLayers = {
     'Khuvsgul Aimag image': imagePerthOverlay,
     'Dornod Aimag image': imagePerthOverlay2,
     'BayanUlgii Aimag image': imagePerthOverlay3,
-    'Odoogiin bairlal': mymap.locate({setView:true, maxZoom: 6})
+    'Odoogiin bairlal': currentLocationLayer
   } 
 
   
@@ -82,15 +83,22 @@ function init(){
   perthMarker.bindTooltip('Tooltip');
 
 
-  mymap.locate({setView:true, maxZoom: 6})
+  mymap.locate({setView:true, maxZoom: 6, watch: false})
 
   function onLocationFound(e){
     var radius = e.accuracy.toFixed(2);
-
-    var locationMarker = L.marker(e.latlng).addTo(mymap)
-      .bindPopup('You are within ' + radius + ' metres from this point').openPopup()
+    currentLocationLayer.clearLayers();
     
-    var locationCircle = L.circle(e.latlng, radius).addTo(mymap)    
+    var locationCircle = L.circle(e.latlng, radius).addTo(currentLocationLayer)
+    var distanceMeters = mymap.distance(e.latlng, ubCenter);
+    var distanceKm = (distanceMeters / 1000).toFixed(2);
+    var popupText = 
+      'Gps nariivchlal: ' + radius + ' m<br>' +
+      'UB tuvuus: ' + distanceKm + ' km';
+    var locationMarker = L.marker(e.latlng, { icon: myDivIcon}).addTo(currentLocationLayer)
+      .bindPopup('You are within ' + radius + ' metres from this point').openPopup()
+    locationMarker.bindTooltip('UB tuvuus: ' + distanceKm + ' km');
+    var locationCircle = L.circle(e.latlng, radius).addTo(currentLocationLayer);
   }
 
   mymap.on('locationfound', onLocationFound)
@@ -98,7 +106,8 @@ function init(){
 
 
   function onLocationError(e){
-    window.alert(e.message)  }
+    window.alert(e.message)  
+  }
 
   mymap.on('locationerror', onLocationError)
 
@@ -115,7 +124,7 @@ function init(){
   
   var myDivIcon = L.divIcon({
     className: 'my-div-icon',
-    iconSize: 30,
+    iconSize: [30, 30],
   })
 
   var counter = 0;
@@ -131,8 +140,8 @@ function init(){
       closeOnClick: false,
     }).setContent(String(counter))
     
-    L.marker(latlng, {icon: myDivIcon})
-      .addTo(mymap)    
+    L.marker(e.latlng, {icon: myDivIcon})
+      .addTo(currentLocationLayer)    
       .bindPopup(popup)
       .openPopup()      
     
