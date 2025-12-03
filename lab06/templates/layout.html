@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>OSM Map Viewer</title>
+  <meta charset="utf-8" />
+  <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+  <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+</head>
+<body>
+  <div class="container">
+    <header>
+      🗺️ OSM Map Viewer
+    </header>
+
+    <div class="sidebar">
+      <div class="info-row">
+        <label for="infoBox">Мэдээлэл:</label>
+        <textarea id="infoBox" rows="6" placeholder="Header + Left side + Map layout..."></textarea>
+      </div>
+    </div>
+
+    <div id="map"></div>
+  </div>
+
+  <script>
+    var center = {{ center|tojson }};
+    
+    //zoom=2 → дэлхийн хэмжээний зураг
+    //zoom=12 → хотын хэмжээ
+    //zoom=16 → гудамж, барилга тод харагдана
+    //zoom=0-22
+    var map = L.map('map').setView(center, 16); // center-г төв болгож
+    //var map = L.map('map').setView([47.92, 106.92], 12); // УБ-г төв болгож
+
+    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+      attribution: '© OpenStreetMap contributors'
+    }).addTo(map);
+
+    var coords = {{ coords|tojson|safe }};
+    coords.forEach(function(c) {
+      L.circleMarker([c[0], c[1]], {radius:2, color:'red'}).addTo(map);
+    });
+
+  </script>
+</body>
+</html>
+
