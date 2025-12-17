@@ -1,0 +1,8 @@
+version: "3.9"
+
+services:
+  extractor:
+    build: ./docker
+    volumes:
+      - ./data:/data
+      - ./web:/web

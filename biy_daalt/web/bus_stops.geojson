@@ -1,0 +1,343 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          106.917945,
+          47.916726
+        ]
+      },
+      "properties": {
+        "name": "Сүхбаатарын талбай"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          106.920663,
+          47.922496
+        ]
+      },
+      "properties": {
+        "name": "Монгол улсын их сургууль;МУИС"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          106.923878,
+          47.918598
+        ]
+      },
+      "properties": {
+        "name": "МУБИС"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          106.915624,
+          47.91435
+        ]
+      },
+      "properties": {
+        "name": "Төв номын сан"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          106.927056,
+          47.922706
+        ]
+      },
+      "properties": {
+        "name": "64-р дэлгүүр"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          106.933624,
+          47.918374
+        ]
+      },
+      "properties": {
+        "name": "Бөхийн өргөө"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          106.925772,
+          47.918116
+        ]
+      },
+      "properties": {
+        "name": "МУБИС"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          106.926273,
+          47.917927
+        ]
+      },
+      "properties": {
+        "name": "Өргөө амаржих газар"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          106.944053,
+          47.913617
+        ]
+      },
+      "properties": {
+        "name": "Халдварт"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          106.943404,
+          47.910672
+        ]
+      },
+      "properties": {
+        "name": "Улаанбаатар их сургууль"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          106.93906,
+          47.927836
+        ]
+      },
+      "properties": {
+        "name": "сансарын колонкын буудал"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          106.920378,
+          47.922483
+        ]
+      },
+      "properties": {
+        "name": "Монгол Улсын Их Сургууль"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          106.922097,
+          47.922411
+        ]
+      },
+      "properties": {
+        "name": "Монгол Улсын Их Сургууль"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          106.915015,
+          47.913382
+        ]
+      },
+      "properties": {
+        "name": "Баянгол зочид буудал"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          106.932344,
+          47.918523
+        ]
+      },
+      "properties": {
+        "name": "Хөдөлмөрийн яам"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          106.941074,
+          47.918808
+        ]
+      },
+      "properties": {
+        "name": "Зүүн 4 зам"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          106.941701,
+          47.919044
+        ]
+      },
+      "properties": {
+        "name": "Зүүн 4 зам"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          106.965111,
+          47.916203
+        ]
+      },
+      "properties": {
+        "name": "Баянзүрх дүүрэг"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          106.943617,
+          47.910986
+        ]
+      },
+      "properties": {
+        "name": "Улаанбаатар их сургууль"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          106.936539,
+          47.912783
+        ]
+      },
+      "properties": {
+        "name": "Натур автобусны буудал"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          106.921129,
+          47.915233
+        ]
+      },
+      "properties": {
+        "name": "Эрүүл мэндийн яам"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          106.922387,
+          47.913241
+        ]
+      },
+      "properties": {
+        "name": "Хүүхдийн парк"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          106.923234,
+          47.919736
+        ]
+      },
+      "properties": {
+        "name": "МУБИС"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          106.923925,
+          47.918446
+        ]
+      },
+      "properties": {
+        "name": "МУБИС"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          106.917796,
+          47.91774
+        ]
+      },
+      "properties": {
+        "name": "Сүхбаатарын талбайн төв зогсоол"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          106.917781,
+          47.917834
+        ]
+      },
+      "properties": {
+        "name": "Bus stop"
+      }
+    }
+  ]
+}
